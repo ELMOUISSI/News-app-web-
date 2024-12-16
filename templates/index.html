@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Blogging Page</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .blog-title {
+            color: #343a40;
+        }
+        .blog-post {
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .blog-image {
+            max-height: 300px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .blog-footer {
+            background-color: #343a40;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+{% include 'navbar.html' %}
+<div class="jumbotron text-center">
+    <h1 class="display-4 blog-title">My News Web Application</h1>
+    <p class="lead">A simple blog to share your thoughts and ideas.</p>
+</div>
+
+
+
+
+<div class="container">
+    <div class="row">
+        {% for new, des, i in context %}
+        <div class="col-md-4">
+            <div class="blog-post">
+                <img src="{{ i }}" alt="Blog Image" class="blog-image mb-3">
+                <h3>News: </h3> {{new}}
+                <h4>Description: </h4> {{des}}
+                <a href="#" class="btn btn-primary btn-sm" target="_blank">Read More</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<footer class="blog-footer">
+    <p>&copy; 2024 My Flask Blog. All rights reserved.</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</body>
+</html>

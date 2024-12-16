@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ article['title'] }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>{{ article['title'] }}</h1>
+        <img src="{{ article['urlToImage'] }}" alt="News Image" class="img-fluid mb-4">
+        <p>{{ article['description'] }}</p>
+        <a href="{{ article['url'] }}" target="_blank" class="btn btn-primary">Read Full Article</a>
+    </div>
+</body>
+</html>
